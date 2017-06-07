@@ -1,0 +1,22 @@
+---
+- name: set download location on master
+  # TODO
+
+- name: create downloads folder if it does not exist yet
+  # TODO
+
+- name: configure facts
+  # TODO
+
+- name: check if Oracle SQL Developer archive is present
+  # TODO
+
+- name: create install directory
+  # TODO
+
+- name: set name of unpacked Oracle SQL Developer directory
+  # TODO
+
+- name: unpack archive from master
+  # TODO
+

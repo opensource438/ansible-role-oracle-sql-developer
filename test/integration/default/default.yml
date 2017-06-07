@@ -1,0 +1,4 @@
+---
+- hosts: all
+  roles:
+    - role: ferrarimarco.oracle-sql-developer
