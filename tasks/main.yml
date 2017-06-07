@@ -3,7 +3,7 @@
   stat:
     path: "{{ ferrarimarco_oracle_sql_dev_archive_path }}"
     register: sqldeveloper_archive
-  fail_when: false
+  failed_when: false
 
 - name: create install directory
   file:
