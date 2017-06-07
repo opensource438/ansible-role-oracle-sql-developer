@@ -2,8 +2,7 @@
 - name: check if Oracle SQL Developer archive is present
   stat:
     path: "{{ ferrarimarco_oracle_sql_dev_archive_path }}"
-    register: sqldeveloper_archive
-  failed_when: false
+  register: sqldeveloper_archive
 
 - name: create install directory
   file:
