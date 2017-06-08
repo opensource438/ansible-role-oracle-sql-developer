@@ -10,9 +10,23 @@
     state: directory
   when: sqldeveloper_archive.stat.exists == True
 
+- name: set executable path
+  set_fact:
+    ferrarimarco_oracle_sql_dev_exe_path: "{{ ferrarimarco_oracle_sql_dev_install_dir ~ '/sqldeveloper/sqldeveloper.sh' }}"
+    ferrarimarco_oracle_sql_dev_icon_path: "{{ ferrarimarco_oracle_sql_dev_install_dir ~ '/sqldeveloper/icon.png' }}"
+
 - name: unpack archive from master
   unarchive:
-    creates: "{{ ferrarimarco_oracle_sql_dev_install_dir ~ '/sqldeveloper/sqldeveloper.sh' }}"
+    creates: "{{ ferrarimarco_oracle_sql_dev_exe_path }}"
     dest: "{{ ferrarimarco_oracle_sql_dev_install_dir }}"
     src: "{{ ferrarimarco_oracle_sql_dev_archive_path }}"
+  when: sqldeveloper_archive.stat.exists == True
+
+- name: initialize menu shortcut
+  template:
+    dest: /usr/share/applications/sqldeveloper.desktop
+    group: root
+    mode: 0644
+    owner: root
+    src: sqldeveloper.desktop.j2
   when: sqldeveloper_archive.stat.exists == True
