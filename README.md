@@ -35,6 +35,8 @@ See [`defaults/main.yml`](defaults/main.yml).
 ### Setup
 1. Install the necessary tools: [`test/scripts/before-install.sh`](test/scripts/before-install.sh)
 1. Install required gems from inside the root of the project: [`test/scripts/install.sh`](test/scripts/install.sh)
-1. Run lint checks and tests: [`test/scripts/test-role.sh`](test/scripts/test-role.sh)
+1. Download Oracle SQL Developer archive and place it in `test/downloads/sqldeveloper-no-jre.zip`
+1. Run lint checks: [`test/scripts/test-role.sh`](test/scripts/test-role.sh)
+1. Run tests: `kitchen test`
 
 Note that after installing the required gems you can run other Test-kitchen commands besides the ones listed in [`test/scripts/test-role.sh`](test/scripts/test-role.sh).

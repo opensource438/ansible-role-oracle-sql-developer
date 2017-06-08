@@ -8,6 +8,6 @@ ansible-lint .
 yamllint -d "{extends: default, rules: {line-length: {level: warning}}}" .
 kitchen diagnose --all
 
-kitchen test ${kitchen_instance}
+kitchen converge
 
 set +e

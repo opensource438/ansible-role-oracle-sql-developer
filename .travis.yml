@@ -1,7 +1,4 @@
 ---
-env:
-  - kitchen_instance=default-ubuntu-1404
-  - kitchen_instance=default-ubuntu-1604
 language: ruby
 rvm:
   - 2.3
