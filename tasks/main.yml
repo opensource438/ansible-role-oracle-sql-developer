@@ -1,4 +1,15 @@
 ---
+- name: ensure required APT packages are installed
+  apt:
+    autoremove: yes
+    cache_valid_time: 3600
+    pkg: "{{ item }}"
+    state: present
+    update_cache: yes
+  become: yes
+  with_items:
+    - unzip
+
 - name: check if Oracle SQL Developer archive is present
   stat:
     path: "{{ ferrarimarco_oracle_sql_dev_archive_path }}"
