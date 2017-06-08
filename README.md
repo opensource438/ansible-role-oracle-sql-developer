@@ -1,7 +1,7 @@
 # Ansible Role: ferrarimarco.oracle-sql-developer
 
-* Development branch: [![Build Status](https://travis-ci.org/ferrarimarco/ansible-oracle-sql-developer.svg?branch=development)](https://travis-ci.org/ferrarimarco/ansible-oracle-sql-developer)
-* Master branch: [![Build Status](https://travis-ci.org/ferrarimarco/ansible-oracle-sql-developer.svg?branch=master)](https://travis-ci.org/ferrarimarco/ansible-oracle-sql-developer)
+* Development branch: [![Build Status](https://travis-ci.org/ferrarimarco/ansible-role-oracle-sql-developer.svg?branch=development)](https://travis-ci.org/ferrarimarco/ansible-role-oracle-sql-developer)
+* Master branch: [![Build Status](https://travis-ci.org/ferrarimarco/ansible-role-oracle-sql-developer.svg?branch=master)](https://travis-ci.org/ferrarimarco/ansible-role-oracle-sql-developer)
 
 Ansible role to install Oracle SQL Developer. An archive containing Oracle SQL Developer must be provided as it cannot be redistributed.
 
