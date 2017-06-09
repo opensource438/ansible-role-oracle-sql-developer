@@ -26,6 +26,11 @@
     ferrarimarco_oracle_sql_dev_exe_path: "{{ ferrarimarco_oracle_sql_dev_install_dir ~ '/sqldeveloper/sqldeveloper.sh' }}"
     ferrarimarco_oracle_sql_dev_icon_path: "{{ ferrarimarco_oracle_sql_dev_install_dir ~ '/sqldeveloper/icon.png' }}"
 
+- name: check if Oracle SQL Developer is already installed
+  stat:
+    path: "{{ ferrarimarco_oracle_sql_dev_exe_path }}"
+  register: sqldeveloper_executable
+
 - name: unpack archive from master
   unarchive:
     creates: "{{ ferrarimarco_oracle_sql_dev_exe_path }}"
@@ -40,4 +45,4 @@
     mode: 0644
     owner: root
     src: sqldeveloper.desktop.j2
-  when: sqldeveloper_archive.stat.exists == True
+  when: sqldeveloper_archive.stat.exists == True or sqldeveloper_executable.stat.exists == True

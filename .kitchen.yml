@@ -30,6 +30,7 @@ provisioner:
 
 suites:
   - name: default
+  - name: setup-shortcut-if-already-installed
 
 transport:
   max_ssh_sessions: 6
