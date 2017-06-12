@@ -6,10 +6,6 @@ driver:
   use_sudo: false
 
 platforms:
-  - name: ubuntu-14.04
-    driver_config:
-      image: ubuntu:14.04
-      platform: ubuntu
   - name: ubuntu-16.04
     driver_config:
       image: ubuntu:16.04
