@@ -5,7 +5,7 @@ control "ferrarimarco.oracle-sql-developer" do
     it { should be_installed }
   end
 
-  sql_developer_extract_path = "/home/kitchen/sw/oracle"
+  sql_developer_extract_path = "/opt/oracle"
 
   describe directory(sql_developer_extract_path) do
     it { should exist }
