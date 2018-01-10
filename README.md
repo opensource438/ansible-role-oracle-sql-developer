@@ -4,6 +4,7 @@
 * Master branch: [![Build Status](https://travis-ci.org/ferrarimarco/ansible-role-oracle-sql-developer.svg?branch=master)](https://travis-ci.org/ferrarimarco/ansible-role-oracle-sql-developer)
 
 Ansible role to install Oracle SQL Developer. An archive containing Oracle SQL Developer must be provided as it cannot be redistributed.
+The application of this role will fail if there is no archive available at the specified path.
 
 ## Using the role
 ### Installation
