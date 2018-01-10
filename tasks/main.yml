@@ -15,11 +15,15 @@
     path: "{{ ferrarimarco_oracle_sql_dev_archive_path }}"
   register: sqldeveloper_archive
 
+- name: fail if Oracle SQL Developer archive is not present
+  fail:
+    msg: "Cannot find Oracle SQL Developer archive in {{ ferrarimarco_oracle_sql_dev_archive_path }}"
+  when: sqldeveloper_archive.stat.exists == False
+
 - name: create install directory
   file:
     dest: "{{ ferrarimarco_oracle_sql_dev_install_dir }}"
     state: directory
-  when: sqldeveloper_archive.stat.exists == True
 
 - name: set executable path
   set_fact:
@@ -36,7 +40,6 @@
     creates: "{{ ferrarimarco_oracle_sql_dev_exe_path }}"
     dest: "{{ ferrarimarco_oracle_sql_dev_install_dir }}"
     src: "{{ ferrarimarco_oracle_sql_dev_archive_path }}"
-  when: sqldeveloper_archive.stat.exists == True
 
 - name: initialize menu shortcut
   template:
@@ -45,4 +48,3 @@
     mode: 0644
     owner: root
     src: sqldeveloper.desktop.j2
-  when: sqldeveloper_archive.stat.exists == True or sqldeveloper_executable.stat.exists == True
